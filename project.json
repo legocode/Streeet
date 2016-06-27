@@ -1,0 +1,16 @@
+
+{
+  "name": "Streeet",
+  "description": "The streeet fashion project.",
+  "memory": 1024,
+  "runtime": "nodejs4.3",
+  "timeout": 5,
+  "role": "arn:aws:iam::268781365876:role/Streeet_lambda_function",
+  "defaultEnvironment": "dev",
+  "environment": {},
+  "handler": "main.default",
+  "hooks": {
+    "build": "../../node_modules/.bin/browserify --node -s default -t babelify --exclude aws-sdk -o main.js index.js",
+    "clean": "rm -f main.js"
+  }
+}
