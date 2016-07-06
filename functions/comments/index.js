@@ -11,7 +11,8 @@ export default λ((e, ctx) => {
   if(commentId) {
     if (httpMethod === "DELETE"){
       postId = e['body-json'].postId;
-      return deleteComment(commentId, postId);
+      const createdAt = e['body-json'].createdAt;
+      return deleteComment(commentId, postId, Number(createdAt));
     }
   }
   if (postId) {
