@@ -6,7 +6,6 @@ import {getAll, getById, addPost} from '../../lib/post_model';
 export default λ((e, ctx) => {
   const postId = e.params.path.id;
   const httpMethod = e.context['http-method'];
-
   if (!postId) {
     if (httpMethod === "GET"){
       return getAll();
