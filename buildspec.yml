@@ -1,0 +1,12 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - curl https://raw.githubusercontent.com/apex/apex/master/install.sh | sh
+  build:
+    commands:
+      - npm install
+  post_build:
+    commands:
+      apex deploy
